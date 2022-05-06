@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Temporary main component hi</h2>
+    <h2>Temporary main component</h2>
   </div>
 </template>
 

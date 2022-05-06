@@ -3,9 +3,15 @@ import MainView from "../views/MainView.vue";
 
 const routes = [
   {
-    path: "/home",
+    path: "/",
     name: "main",
     component: MainView,
+    meta: { layout: null, subtitle: "" },
+  },
+  {
+    path: "/home",
+    name: "home",
+    component: () => import("../views/MainView.vue"),
     meta: { layout: null, subtitle: "" },
   },
 ];
