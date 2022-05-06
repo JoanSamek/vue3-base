@@ -3,7 +3,7 @@ import MainView from "../views/MainView.vue";
 
 const routes = [
   {
-    path: "/",
+    path: "/home",
     name: "main",
     component: MainView,
     meta: { layout: null, subtitle: "" },
@@ -18,12 +18,14 @@ const router = createRouter({
   },
 });
 
-// router.beforeEach((to, from, next) => {
-//   //check auth, etc.
-//   if (true) next();
-// });
+router.beforeEach((to, from, next) => {
+  //check auth, etc.
+  console.log("to ", to.name);
+  console.log("from ", from.name);
+  next();
+});
 
-const defaultTitle = "Lore Hoard";
+const defaultTitle = "Vue3 Base App";
 router.afterEach((to) => {
   document.title = defaultTitle + (to.meta.title || "");
 });
